@@ -50,35 +50,61 @@ public class Main {
     public static String checkLeapYear(int year) {
         boolean leapУear = year % 4 == 0;
         // String resultLeapYear;
-        if (year < 0) return "Данные введены неверно, это не наша эра =)";
-        else if (leapУear && year % 100 != 0) return year + " - високосный год";
-        else if (year % 400 == 0) return year + " - високосный год";
-        else return year + " - не високосный год";
+        if (year < 0) {
+            return "Данные введены неверно, это не наша эра =)";
+        }
+        else if (leapУear && year % 100 != 0) {
+            return year + " - високосный год";
+        }
+        else if (year % 400 == 0) {
+            return year + " - високосный год";
+        }
+        else {
+            return year + " - не високосный год";
+        }
     }
 
     // Задание 2
     public static String chooseVersion(byte clientOS, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
-        if (clientOS != 0 && clientOS != 1) return "Данные введены неверно";
-        else if (clientDeviceYear < 2002) return "Смартфоны тогда еще не изобрели";
-        else if (clientOS == 0 && clientDeviceYear >= currentYear) return "Установите версию приложения для iOS по ссылке. Установите облегченную версию приложения для iOS по ссылке";
-        else if (clientOS == 1 && clientDeviceYear >= currentYear) return "Установите версию приложения для Android по ссылке. Установите облегченную версию приложения для Android по ссылке";
-        else if (clientOS == 0 && clientDeviceYear < currentYear) return "Установите версию приложения для iOS по ссылке";
-        else return "Установите версию приложения для Android по ссылке";
+        if (clientOS != 0 && clientOS != 1) {
+            return "Данные введены неверно";
+        }
+        else if (clientDeviceYear < 2002) {
+            return "Смартфоны тогда еще не изобрели";
+        }
+        else if (clientOS == 0 && clientDeviceYear >= currentYear) {
+            return "Установите версию приложения для iOS по ссылке. Установите облегченную версию приложения для iOS по ссылке";
+        }
+        else if (clientOS == 1 && clientDeviceYear >= currentYear) {
+            return "Установите версию приложения для Android по ссылке. Установите облегченную версию приложения для Android по ссылке";
+        }
+        else if (clientOS == 0 && clientDeviceYear < currentYear) {
+            return "Установите версию приложения для iOS по ссылке";
+        }
+        else {
+            return "Установите версию приложения для Android по ссылке";
+        }
     }
 
     //Задание 3
     public static String calculateDeliveryDays(int deliveryDistance) {
         int needDays = 1;
-        if (deliveryDistance <= 20 && deliveryDistance > 0) return "Потребуется дней: " + needDays;
+        if (deliveryDistance <= 20 && deliveryDistance > 0) {
+            return "Потребуется дней: " + needDays;
+        }
         else if (deliveryDistance > 20 && deliveryDistance <= 60) {
             needDays = needDays + 1;
             return "Потребуется дней: " + needDays;
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             needDays = needDays + 2;
             return "Потребуется дней: " + needDays;
-        } else if (deliveryDistance > 100) return "Мы не сможем доставить Вам карту";
-        else return "Некорректное значение";
+        } else if (deliveryDistance > 100) {
+            return "Мы не сможем доставить Вам карту";
+        }
+        else {
+            return "Некорректное значение";
+        }
     }
 
     public static void main(String[] args) {
